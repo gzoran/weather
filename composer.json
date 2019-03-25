@@ -1,0 +1,28 @@
+{
+    "name": "gzoran\/weather",
+    "description": "A weather SDK",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mike",
+            "email": "zhengzhe94@gmail.com"
+        }
+    ],
+    "require": {
+        "guzzlehttp/guzzle": "^6.3",
+        "phpunit/phpunit": "^6.5.14",
+        "mockery/mockery": "^1.2"
+    },
+    "autoload": {
+        "psr-4": {
+            "Gzoran\\Weather\\": "src"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Gzoran\\Weather\\ServiceProvider"
+            ]
+        }
+    }
+}
