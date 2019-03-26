@@ -97,4 +97,30 @@ class Weather
             throw new HttpException($e->getMessage(), $e->getCode(), $e);
         }
     }
+
+    /**
+     * @author Mike <zhengzhe94@gmail.com>
+     * @param $city
+     * @param string $format
+     * @return mixed|string
+     * @throws HttpException
+     * @throws InvalidArgumentException
+     */
+    public function getLiveWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'base', $format);
+    }
+
+    /**
+     * @author Mike <zhengzhe94@gmail.com>
+     * @param $city
+     * @param string $format
+     * @return mixed|string
+     * @throws HttpException
+     * @throws InvalidArgumentException
+     */
+    public function getForecastsWeather($city, $format = 'json')
+    {
+        return $this->getWeather($city, 'all', $format);
+    }
 }
