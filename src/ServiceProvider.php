@@ -1,17 +1,20 @@
 <?php
-/**
- * Created by Mike <zhengzhe94@gmail.com>.
- * Date: 2019/3/25
- * Time: 17:48
+
+/*
+ * This file is part of the gzoran/weather.
+ *
+ * (c) gzoran <zhengzhe94@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Gzoran\Weather;
 
-
 class ServiceProvider extends \Illuminate\Support\ServiceProvider
 {
     /**
-     * @var boolean
+     * @var bool
      */
     protected $defer = true;
 
@@ -20,7 +23,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
      */
     public function register()
     {
-        $this->app->singleton(Weather::class, function(){
+        $this->app->singleton(Weather::class, function () {
             return new Weather(config('services.weather.key'));
         });
 
@@ -29,6 +32,7 @@ class ServiceProvider extends \Illuminate\Support\ServiceProvider
 
     /**
      * @author Mike <zhengzhe94@gmail.com>
+     *
      * @return array
      */
     public function provides()

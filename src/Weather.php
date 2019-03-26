@@ -1,12 +1,15 @@
 <?php
-/**
- * Created by Mike <zhengzhe94@gmail.com>.
- * Date: 2019/3/25
- * Time: 15:11
+
+/*
+ * This file is part of the gzoran/weather.
+ *
+ * (c) gzoran <zhengzhe94@gmail.com>
+ *
+ * This source file is subject to the MIT license that is bundled
+ * with this source code in the file LICENSE.
  */
 
 namespace Gzoran\Weather;
-
 
 use GuzzleHttp\Client;
 use Gzoran\Weather\Exceptions\HttpException;
@@ -26,6 +29,7 @@ class Weather
 
     /**
      * Weather constructor.
+     *
      * @param string $key
      */
     public function __construct($key)
@@ -35,6 +39,7 @@ class Weather
 
     /**
      * @author Mike <zhengzhe94@gmail.com>
+     *
      * @return Client
      */
     public function getHttpClient()
@@ -44,6 +49,7 @@ class Weather
 
     /**
      * @author Mike <zhengzhe94@gmail.com>
+     *
      * @param array $options
      */
     public function setGuzzleOptions($options)
@@ -53,10 +59,13 @@ class Weather
 
     /**
      * @author Mike <zhengzhe94@gmail.com>
+     *
      * @param $city
      * @param string $type
      * @param string $format
+     *
      * @return mixed|string
+     *
      * @throws InvalidArgumentException
      * @throws HttpException
      */
@@ -90,7 +99,7 @@ class Weather
 
             // 4. 返回值根据 $format 返回不同的格式，
             // 当 $format 为 json 时，返回数组格式，否则为 xml。
-            return $format === 'json' ? \json_decode($response, true) : $response;
+            return 'json' === $format ? \json_decode($response, true) : $response;
         } catch (\Exception $e) {
             // 5. 当调用出现异常时捕获并抛出，消息为捕获到的异常消息，
             // 并将调用异常作为 $previousException 传入。
@@ -100,9 +109,12 @@ class Weather
 
     /**
      * @author Mike <zhengzhe94@gmail.com>
+     *
      * @param $city
      * @param string $format
+     *
      * @return mixed|string
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
      */
@@ -113,9 +125,12 @@ class Weather
 
     /**
      * @author Mike <zhengzhe94@gmail.com>
+     *
      * @param $city
      * @param string $format
+     *
      * @return mixed|string
+     *
      * @throws HttpException
      * @throws InvalidArgumentException
      */
