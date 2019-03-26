@@ -2,9 +2,10 @@
 $header = <<<EOF
 This file is part of the gzoran/weather.
 
-(c) Mike <zhengzhe94@gmail.com>
+(c) gzoran <zhengzhe94@gmail.com>
 
-This source file is subject to the MIT license that is bundled.
+This source file is subject to the MIT license that is bundled
+with this source code in the file LICENSE.
 EOF;
 
 return PhpCsFixer\Config::create()
