@@ -28,7 +28,7 @@ class Weather
      * Weather constructor.
      * @param string $key
      */
-    public function __construct(string $key)
+    public function __construct($key)
     {
         $this->key = $key;
     }
@@ -46,7 +46,7 @@ class Weather
      * @author Mike <zhengzhe94@gmail.com>
      * @param array $options
      */
-    public function setGuzzleOptions(array $options)
+    public function setGuzzleOptions($options)
     {
         $this->guzzleOptions = $options;
     }
@@ -60,7 +60,7 @@ class Weather
      * @throws InvalidArgumentException
      * @throws HttpException
      */
-    public function getWeather($city, string $type = 'base', string $format = 'json')
+    public function getWeather($city, $type = 'base', string $format = 'json')
     {
         $url = 'https://restapi.amap.com/v3/weather/weatherInfo';
 
